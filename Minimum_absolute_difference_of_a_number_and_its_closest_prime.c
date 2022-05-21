@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,i,j,up,Ip,s,m,I,upd,Ipd;
+    scanf("%d",&n);
+    m=n;
+    for(m;;m++)
+    {
+        for(i=2;i<=sqrt(m);i++)
+        {
+            s=1;
+            if(m%i==0)
+            {
+                s=0;
+                break;
+            }
+        }
+        if(s==1)
+        {
+            up=m;
+            break;
+        }
+    }
+    I=n;
+    for(I;I>0;I--)
+    {
+        for(i=2;i<=sqrt(I);i++)
+        {
+            s=1;
+            if(I%i==0)
+            {
+                s=0;
+                break;
+            }
+        }
+        if(s==1)
+        {
+            Ip=I;
+            break;
+        }
+    }
+    upd=up-n;
+    Ipd=n-Ip;
+    if(Ipd<=upd)
+    {
+        printf("%d",Ipd);
+    }
+    else
+    {
+        printf("%d",upd);
+    }
+}
