@@ -1,26 +1,37 @@
 #include<stdio.h>
 int main()
 {
-    int n,a=0,b=1,c,temp;
+    int n,a=0,b=1,c,i;
     scanf("%d",&n);
-    c=a+b;
-    temp=n;
-    while(c<=temp)
+    int arr[100],j=0,x,y;
+    for(i=0;i<n;i++)
     {
+        arr[i]=a;
         c=a+b;
         a=b;
         b=c;
+        
     }
-    if(n-a>b-n)
+    for(i=0;i<n;i++)
     {
-        printf("%d",b);
+        if(arr[i]<=n && arr[i+1]>=n)
+        {
+            x=arr[i];
+            y=arr[i+1];
+            break;
+        }
     }
-    else if(n-a<b-n)
+    if((n-x)>(y-n))
     {
-        printf("%d",a);
+        printf("%d",y);
     }
-    else
+    else if((n-x)<(y-n))
     {
-        printf("%d %d",a,b);
+        printf("%d ",x);
+    
+    }
+    else if((n-x)==(y-n))
+    {
+        printf("%d %d",x,y);
     }
 }
