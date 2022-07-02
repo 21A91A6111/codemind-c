@@ -2,37 +2,37 @@
 int is_prime(int n)
 {
     int i,c=0;
-    for(i=2;i<=n/2;i++)
+    for(i=1;i<=n;i++)
     {
         if(n%i==0)
         {
             c++;
         }
     }
-    if(c==0)
+    if(c==2)
     {
         return 1;
     }
-    return 0;
+    else
+    {
+        return 0;
+    }
 }
 int main()
 {
-    int n,count=2;
+    int n,d=0,i,j;
     scanf("%d",&n);
-    for (int i=2;i<=n/2;i++)
+    for(i=1;i<=n;i++)
     {
-       if(n%i==0)
-       {
-            if (is_prime(i))
+        if(n%i==0)
+        
         {
-            i++;
-            continue;
+            is_prime(i);
+            if(is_prime(i)==0)
+            {
+                d++;
+            }
         }
-        else
-        {
-            count++;
-        }
-       }
     }
-    printf("%d",count);
+    printf("%d",d);
 }
