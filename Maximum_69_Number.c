@@ -1,29 +1,46 @@
+
 #include<stdio.h>
-int main()
+int rev(int n)
 {
-    int n,d,a[100],i,j;
-    scanf("%d",&n);
-    i=0;
+    int v=0,g;
     while(n!=0)
     {
-        d=n%10;
+        g=n%10;
+        v=v*10+g;
         n=n/10;
-        a[i]=d;
-        i++;
     }
-    for(j=i-1;j>=0;j--)
+    return v;
+}
+int change(int c)
+{
+    int k=c,a[100],j,p=0,i;
+    while(c>0)
     {
-        //for(int k=0;k<i;k++)
+        j=c%10;
+        a[p]=j;
+        p++;
+        c=c/10;
+    }
+    for(i=0;i<p;i++)
+    {
+        if(a[i]==6)
         {
-            if(a[j]==6)
-            {
-                a[j]=9;
-                break;
-            }
+            a[i]=9;
+            break;
         }
     }
-    for(j=i-1;j>=0;j--)
+    int z=0,b=0;
+    while(p--)
     {
-        printf("%d",a[j]);
+        b=b*10+a[z];
+        z++;
     }
+    return b;
+}
+int main()
+{
+    int n,c;
+    scanf("%d",&n);
+    c=rev(n);
+    printf("%d",change(c));
 }
