@@ -1,20 +1,13 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,j;
-    scanf("%d",&n);
-    for(i=1;i<=n;i++)
+    int N,i,j;
+    scanf("%d",&N);
+    for(i=1;i<=N;i++)
     {
-        for(j=1;j<=n;j++)
+        for(j=N;j>=1;j--)
         {
-            if(i==j||i+j==n+1)
-            {
-                printf("x");
-            }
-            else
-            {
-                printf("0");
-            }
+            printf("%d ",j);
         }
         printf("
 ");
